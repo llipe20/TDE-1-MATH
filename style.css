@@ -88,7 +88,7 @@ input {
     outline: none;
     height: 50px;
     border-radius: 10px; 
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.507);
+    color: rgba(128, 128, 128, 0.353);
 }
 
 .botton {
@@ -107,4 +107,29 @@ input {
     width: 100%;
     height: auto;
     text-align: center;
+}
+
+/* box de relatorio */
+
+.box-relatorio, .box-conteudo {
+    padding: 20px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.box-conteudo {
+    gap: 15px;
+    text-align: justify;
+}
+
+ul.lista {
+    gap: 20px;
+}
+
+.lista > li {
+    gap: 10px;
+}
+
+.invisible {
+    display: none;
 }

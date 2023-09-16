@@ -2,22 +2,36 @@
 export { addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 }
 
 // QUESTÃO 1
-function quiz1(S, subset = [], index = 0) {
-    // Caso base: quando chegamos ao final do conjunto S
-    if (index === S.length) {
-      console.log(subset);
-      console.log("oiii")
-      return;
+const subconjunto = (conjunto) => {
+    if (conjunto.length === 0) 
+    {
+        return [['']];
     }
-  
-    // Inclua o elemento atual em subset e gere os subconjuntos que o incluem
-    subset.push(S[index]);
-    quiz1(S, subset, index + 1);
-  
-    // Não inclua o elemento atual em subset e gere os subconjuntos que o excluem
-    subset.pop();
-    quiz1(S, subset, index + 1);
-  }
+
+    const first = conjunto[0];
+    const sub = subconjunto(conjunto.slice(1));
+    const subconjuntosComPrimeiroElemento = sub.map(subset => [first, ...subset]);
+
+    return sub.concat(subconjuntosComPrimeiroElemento);
+}
+
+const quiz1 = (id) => {
+    const input = document.getElementById(`questao-${id}`);
+    const entrada = input.value;
+    const saida = document.getElementById(`resposta-${id}`);
+
+    if (entrada.trim() === '') 
+    {
+        saida.textContent = 'Nenhum valor inserido.';
+        return
+    }
+
+    const conjunto = entrada.split(',');
+    const subconjuntos = subconjunto(conjunto);
+
+    // Exibir subconjuntos 
+    saida.innerHTML = subconjuntos.map(subset => `[${subset.map(item => item === '' ? '".."' : item).join(', ')}]`).join(',&nbsp;');
+}
       
 // QUESTÃO 2
 const quiz2 = () => {
@@ -50,11 +64,11 @@ const quiz7 = () => {
 }
 
 // RODA A FUNÇÃO CORRETA DE RESOLVER O EXERCÍCIO CORRETO
-const escolha = (index,conjunto) => {
+const escolha = (index) => {
     switch (index)
     {
         case 0:
-            return 0
+            return quiz1(index)
         break
         case 1:
             return 1
@@ -80,10 +94,11 @@ const escolha = (index,conjunto) => {
 }
 
 // ADICIONAR ESCULTA NOS BOTÕES DE CALCULAR
-const addBotton = (botton, input) => {
+const addBotton = (botton, index) => {
+    let i = index
     botton.addEventListener("click", (e) => {
         e.preventDefault()
-        return input.value
+        return escolha(i)
     })
 }
 
@@ -96,7 +111,6 @@ const addArray = (input) => {
 
             input.value = ''
             input.setAttribute("autofocus","autofocus")
-
 
             return conj
         }     

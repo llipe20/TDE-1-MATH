@@ -9,6 +9,8 @@ const kaya = () => {
    
     for (let i = 0; i <= dados.length; i ++)
     {
+        let overview = dados[i].relatorio
+
         // BOX PRINCIPAL
         let box = document.createElement("div")
         box.classList.add("box-questao", "container")
@@ -21,7 +23,7 @@ const kaya = () => {
 
         // INPUT
         let entrada = document.createElement("input")
-        entrada.setAttribute("type","number")
+        entrada.setAttribute("type","text")
         entrada.setAttribute("id",`questao-${i}`)
         entrada.setAttribute("placeholder","ex: 0")
         entrada.setAttribute("class","input")
@@ -32,6 +34,7 @@ const kaya = () => {
         botton.setAttribute("class","botton")
         botton.setAttribute("id",`calcular-${i}`)
         botton.setAttribute("value","Calcular")
+        addBotton(botton,i)                          // function aqui --
 
         // BOX SECUNDÁRIO
         let box2 = document.createElement("div")
@@ -39,9 +42,58 @@ const kaya = () => {
 
         // PARAGRAFO DE RESPOSTAS
         let resposta = document.createElement("p")
-        let valor = escolha(i)            // function resposta aqui
         resposta.setAttribute("id",`resposta-${i}`)
-        resposta.textContent = valor
+        resposta.textContent = ''
+
+        // BOX PARA O RELATÓRIO
+        let box3 = document.createElement("div")
+        box3.classList.add("box-relatorio", "container")
+
+        // BOX PARA CONTEÚDO DO RELATÓRIO
+        let box4 = document.createElement("div")
+        box4.classList.add("box-conteudo","container")
+
+        // H3 E PARAGRAFOS
+        let h3Title = document.createElement("h3")
+        h3Title.textContent = 'RELATÓRIO'
+
+        let icon = document.createElement("span")
+        icon.textContent = ''
+
+        let h3Obj = document.createElement("h3")
+        h3Obj.textContent = 'OBJETIVO'
+
+        let pObj = document.createElement("p")
+        pObj.textContent = overview.objetivo
+
+        let h3Over = document.createElement("h3")
+        h3Over.textContent = 'PASSO Á PASSO'
+
+        let ul = document.createElement("ul")
+        ul.classList.add("lista","container")
+
+        let funcao = overview.recursao
+        for (let x = 0; x < funcao.length; x ++)
+        {
+            let li = document.createElement("li")
+            li.classList.add("container")
+
+            let h3Li = document.createElement("h3")
+            h3Li.textContent = funcao.name
+
+            for (let y = 0; y < 3; y++)
+            {
+                let pLi = document.createElement("p");
+                pLi.textContent = funcao.desc[y]
+                ul.appendChild(pLi)
+            }
+        }
+
+        let h3Ex = document.createElement("h3")
+        h3Ex.textContent = 'EXEMPLO DE USO'
+
+        let pEx = document.createElement("p")
+        pEx.textContent = overview.exemple
         
         // MONTANDO...
         main.appendChild(box)
@@ -50,11 +102,18 @@ const kaya = () => {
             box.appendChild(entrada)
             box.appendChild(botton)
             box.appendChild(box2)
+            box.appendChild(box3)
                 box2.appendChild(resposta)
+                box3.appendChild(h3Title)
+                box3.appendChild(icon)
+                box3.appendChild(box4)
+                    box4.appendChild(h3Obj)
+                    box4.appendChild(pObj)
+                    box4.appendChild(h3Over)
+                    box4.appendChild(ul)
+                    box4.appendChild(h3Ex)
+                    box4.appendChild(pEx)
     }
 }
 
 kaya()
-     // Exemplo de uso:
-     var conjuntoS = [1, 2, 3];
-     quiz1(conjuntoS);
