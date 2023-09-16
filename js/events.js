@@ -1,6 +1,6 @@
 // EVENTOS PARA INTERAÇÃO DA PÁGINA
 import Dados from "./dados-obj.js";
-import { addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 } from "./functions.js"
+import { addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 } from "./functions.js"
 
 // PASSO 1: MONTAR A ESTRUTURA HTML
 const kaya = () => {
@@ -32,7 +32,6 @@ const kaya = () => {
         botton.setAttribute("class","botton")
         botton.setAttribute("id",`calcular-${i}`)
         botton.setAttribute("value","Calcular")
-        let conjunto = addBotton(botton,entrada)    // function botton aqui
 
         // BOX SECUNDÁRIO
         let box2 = document.createElement("div")
@@ -40,7 +39,7 @@ const kaya = () => {
 
         // PARAGRAFO DE RESPOSTAS
         let resposta = document.createElement("p")
-        let valor = escolha(i,conjunto)            // function resposta aqui
+        let valor = escolha(i)            // function resposta aqui
         resposta.setAttribute("id",`resposta-${i}`)
         resposta.textContent = valor
         
@@ -56,3 +55,6 @@ const kaya = () => {
 }
 
 kaya()
+     // Exemplo de uso:
+     var conjuntoS = [1, 2, 3];
+     quiz1(conjuntoS);

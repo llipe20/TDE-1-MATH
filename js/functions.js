@@ -1,11 +1,24 @@
 // FUNÇÕES DE RESOLUÇÃO DE QUESTÕES
-export { addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 }
+export { addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 }
 
 // QUESTÃO 1
-const quiz1 = () => {
-
-}
-
+function quiz1(S, subset = [], index = 0) {
+    // Caso base: quando chegamos ao final do conjunto S
+    if (index === S.length) {
+      console.log(subset);
+      console.log("oiii")
+      return;
+    }
+  
+    // Inclua o elemento atual em subset e gere os subconjuntos que o incluem
+    subset.push(S[index]);
+    quiz1(S, subset, index + 1);
+  
+    // Não inclua o elemento atual em subset e gere os subconjuntos que o excluem
+    subset.pop();
+    quiz1(S, subset, index + 1);
+  }
+      
 // QUESTÃO 2
 const quiz2 = () => {
 
@@ -41,31 +54,24 @@ const escolha = (index,conjunto) => {
     switch (index)
     {
         case 0:
-            console.log(0)
             return 0
         break
         case 1:
-            console.log(1)
             return 1
         break
         case 2:
-            console.log(2)
             return 2
         break
         case 3:
-           console.log(3)
            return 3
         break
         case 4:
-            console.log(4)
             return 4
         break
         case 5:
-            console.log(5)
             return 5
         break
         case 6:
-            console.log(6)
             return 6
         break
         default:
@@ -77,7 +83,22 @@ const escolha = (index,conjunto) => {
 const addBotton = (botton, input) => {
     botton.addEventListener("click", (e) => {
         e.preventDefault()
-        console.log(input.value)
         return input.value
+    })
+}
+
+// ADICIONAR DADOS NUMÉRICOS EM ARRAY       
+const addArray = (input) => {
+    input.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) 
+        {   let conj = []
+            conj.push(input.value)
+
+            input.value = ''
+            input.setAttribute("autofocus","autofocus")
+
+
+            return conj
+        }     
     })
 }
