@@ -134,13 +134,20 @@ input {
 }
 
 ul.lista {
-    gap: 20px;
+    gap: 35px;
 }
 
 .lista > li {
-    gap: 10px;
+    gap: 15px;
 }
 
 .invisible {
     display: none;
+    transition: all .5s;
+}
+
+p {
+    line-height: 1.5em;
+    font-size: 1.075em;
+    text-align: justify;
 }

@@ -1,5 +1,5 @@
 // FUNÇÕES DE RESOLUÇÃO DE QUESTÕES
-export { addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 }
+export { ShowModal, addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 }
 
 // QUESTÃO 1
 const subconjunto = (conjunto) => {
@@ -30,7 +30,7 @@ const quiz1 = (id) => {
     const subconjuntos = subconjunto(conjunto);
 
     // Exibir subconjuntos 
-    saida.innerHTML = subconjuntos.map(subset => `[${subset.map(item => item === '' ? '".."' : item).join(', ')}]`).join(',&nbsp;');
+    saida.innerHTML = subconjuntos.map(subset => `[${subset.map(item => item === '' ? '..' : item).join(', ')}]`).join('&nbsp;');
 }
       
 // QUESTÃO 2
@@ -114,5 +114,20 @@ const addArray = (input) => {
 
             return conj
         }     
+    })
+}
+
+const ShowModal = (gatilho,box,icon) => {
+    gatilho.addEventListener("click", () => {
+        box.classList.toggle("invisible")
+
+        if(box.classList.contains("invisible"))
+        {
+            icon.textContent = 'expand_more'
+        }
+        else
+        {
+            icon.textContent = 'expand_less'
+        }
     })
 }

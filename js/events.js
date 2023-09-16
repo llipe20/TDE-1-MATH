@@ -1,6 +1,6 @@
 // EVENTOS PARA INTERAÇÃO DA PÁGINA
 import Dados from "./dados-obj.js";
-import { addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 } from "./functions.js"
+import { ShowModal, addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 } from "./functions.js"
 
 // PASSO 1: MONTAR A ESTRUTURA HTML
 const kaya = () => {
@@ -34,7 +34,7 @@ const kaya = () => {
         botton.setAttribute("class","botton")
         botton.setAttribute("id",`calcular-${i}`)
         botton.setAttribute("value","Calcular")
-        addBotton(botton,i)                          // function aqui --
+        addBotton(botton,i)                          // function aqui -- addBototn
 
         // BOX SECUNDÁRIO
         let box2 = document.createElement("div")
@@ -51,7 +51,7 @@ const kaya = () => {
 
         // BOX PARA CONTEÚDO DO RELATÓRIO
         let box4 = document.createElement("div")
-        box4.classList.add("box-conteudo","container")
+        box4.classList.add("box-conteudo","container","invisible")
 
         // H3 E PARAGRAFOS
         let h3Title = document.createElement("h3")
@@ -60,6 +60,7 @@ const kaya = () => {
         let icon = document.createElement("span")
         icon.classList.add("material-symbols-outlined")
         icon.textContent = 'expand_more'
+        ShowModal(box3,box4,icon)           //  function aqui -- ShowModal
 
         let h3Obj = document.createElement("h3")
         h3Obj.textContent = 'OBJETIVO'
@@ -74,7 +75,24 @@ const kaya = () => {
         ul.classList.add("lista","container")
 
         let funcao = overview.recursao
-        
+        for (let x = 0; x < funcao.length; x++) 
+        {
+            let li = document.createElement("li")
+            li.classList.add("container")
+
+            let h3Li = document.createElement("h3")
+            h3Li.textContent = funcao[x].name
+            li.appendChild(h3Li)
+
+            funcao[x].desc.forEach(desc => {
+                let pLi = document.createElement("p")
+                pLi.textContent = desc;
+                li.appendChild(pLi)
+            })
+
+            ul.appendChild(li)
+        }
+
         // MONTANDO...
         main.appendChild(box)
             box.appendChild(h3)
@@ -91,8 +109,6 @@ const kaya = () => {
                     box4.appendChild(pObj)
                     box4.appendChild(h3Over)
                     box4.appendChild(ul)
-                    box4.appendChild(h3Ex)
-                    box4.appendChild(pEx)
     }
 }
 
