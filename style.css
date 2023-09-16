@@ -88,7 +88,7 @@ input {
     outline: none;
     height: 50px;
     border-radius: 10px; 
-    color: rgba(128, 128, 128, 0.353);
+    background-color: rgba(128, 128, 128, 0.353);
 }
 
 .botton {
@@ -112,12 +112,23 @@ input {
 /* box de relatorio */
 
 .box-relatorio, .box-conteudo {
+    background-color: rgba(128, 128, 128, 0.353);
     padding: 20px;
     align-items: center;
     border-radius: 10px;
+    width: 80vw;
+}
+
+@media screen and (min-width: 1000px) 
+{
+    .box-relatorio, .box-conteudo {
+        max-width: 100%;
+    }
 }
 
 .box-conteudo {
+    background-color: transparent;
+    margin-top: 20px;
     gap: 15px;
     text-align: justify;
 }

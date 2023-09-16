@@ -9,8 +9,6 @@ export default {
 
                 objetivo : 'O código em questão tem o objetivo de receber um conjunto de elementos separados por vírgula de um usuário e, em seguida, gerar e exibir todos os subconjuntos possíveis desses elementos.',
 
-                exemple : 'No final do código, há um exemplo de uso onde a função `quiz1` é chamada com um ID específico. Você pode usar essa função em seu código HTML, chamando-a com o ID do elemento de entrada e saída desejado. Em resumo, este código permite que o usuário insira um conjunto de elementos separados por vírgula e, em seguida, gera e exibe todos os subconjuntos possíveis desses elementos, apresentando-os de forma organizada.',
-
                 recursao: [
                     {
                         name : 'Função subconjunto:',

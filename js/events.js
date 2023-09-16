@@ -58,7 +58,8 @@ const kaya = () => {
         h3Title.textContent = 'RELATÓRIO'
 
         let icon = document.createElement("span")
-        icon.textContent = ''
+        icon.classList.add("material-symbols-outlined")
+        icon.textContent = 'expand_more'
 
         let h3Obj = document.createElement("h3")
         h3Obj.textContent = 'OBJETIVO'
@@ -73,27 +74,6 @@ const kaya = () => {
         ul.classList.add("lista","container")
 
         let funcao = overview.recursao
-        for (let x = 0; x < funcao.length; x ++)
-        {
-            let li = document.createElement("li")
-            li.classList.add("container")
-
-            let h3Li = document.createElement("h3")
-            h3Li.textContent = funcao.name
-
-            for (let y = 0; y < 3; y++)
-            {
-                let pLi = document.createElement("p");
-                pLi.textContent = funcao.desc[y]
-                ul.appendChild(pLi)
-            }
-        }
-
-        let h3Ex = document.createElement("h3")
-        h3Ex.textContent = 'EXEMPLO DE USO'
-
-        let pEx = document.createElement("p")
-        pEx.textContent = overview.exemple
         
         // MONTANDO...
         main.appendChild(box)
