@@ -56,11 +56,13 @@ const kaya = () => {
         // H3 E PARAGRAFOS
         let h3Title = document.createElement("h3")
         h3Title.textContent = 'RELATÓRIO'
+        h3Title.setAttribute("style","width:100%; text-align:center; cursor: pointer;")
 
         let icon = document.createElement("span")
         icon.classList.add("material-symbols-outlined")
+        icon.setAttribute("style","width:100%; text-align:center; cursor: pointer;")
         icon.textContent = 'expand_more'
-        ShowModal(box3,box4,icon)           //  function aqui -- ShowModal
+        ShowModal(h3Title,box4,icon)           //  function aqui -- ShowModal
 
         let h3Obj = document.createElement("h3")
         h3Obj.textContent = 'OBJETIVO'

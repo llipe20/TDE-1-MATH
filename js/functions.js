@@ -614,4 +614,17 @@ const ShowModal = (gatilho,box,icon) => {
             icon.textContent = 'expand_less'
         }
     })
+
+    icon.addEventListener("click", () => {
+        box.classList.toggle("invisible")
+
+        if(box.classList.contains("invisible"))
+        {
+            icon.textContent = 'expand_more'
+        }
+        else
+        {
+            icon.textContent = 'expand_less'
+        }
+    })
 }

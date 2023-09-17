@@ -94,6 +94,7 @@ input {
 
 .botton {
     background-color: green;
+    cursor: pointer;
     color: white;
 }
 
