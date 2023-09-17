@@ -76,6 +76,9 @@ const kaya = () => {
         let ul = document.createElement("ul")
         ul.classList.add("lista","container")
 
+        let h3Link = document.createElement("h3")
+        h3Link.textContent = 'CÓDIGO'
+
         let funcao = overview.recursao
         for (let x = 0; x < funcao.length; x++) 
         {
@@ -111,6 +114,15 @@ const kaya = () => {
                     box4.appendChild(pObj)
                     box4.appendChild(h3Over)
                     box4.appendChild(ul)
+                    box4.appendChild(h3Link)
+
+        overview.link.forEach(link => {
+            let aLink = document.createElement("a")
+                aLink.textContent = 'link para imagem do código'
+                aLink.setAttribute("href",`${link}`)
+                aLink.setAttribute("target","_blank")
+                box4.appendChild(aLink)
+        })
     }
 }
 

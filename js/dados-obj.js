@@ -10,6 +10,11 @@ export default {
 
                 objetivo : 'O código em questão tem o objetivo de receber um conjunto de elementos separados por vírgula de um usuário e, em seguida, gerar e exibir todos os subconjuntos possíveis desses elementos.',
 
+                link : 
+                [ 
+                    'https://drive.google.com/file/d/17y3WaUsYlsosZR6jZ6PEEixafqjpxbrg/view?usp=drive_link'
+                ],
+
                 recursao: [
                     {
                         name : 'Função subconjunto:',
@@ -75,6 +80,15 @@ export default {
 
                 objetivo : 'Avaliar uma expressão aritmética na notação pós-fixa (também conhecida como notação polonesa reversa) e retornar o valor resultante da expressão.',
 
+                link : 
+                [
+                    'https://drive.google.com/file/d/1pC0WfcWnx8ug4XCGqkMTq4rWJT-WpJl4/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/1jeC3CM2cLA8z-VWTlCjQ0yWF1zh69VBT/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/19AhduCb3ZFCbnZtxp1Fsj0OjMx5H9nfO/view?usp=drive_link'
+                ],
+                
                 recursao: [
                     {
                         name : 'Divisão em Tokens:',
@@ -121,6 +135,13 @@ export default {
             relatorio : {
 
                 objetivo : 'Converter uma expressão aritmética na notação infixa (com uso de parênteses) em sua forma pós-fixa correspondente, também conhecida como notação polonesa reversa. A notação pós-fixa é uma forma de representar expressões matemáticas em que os operadores são colocados após os operandos, tornando-a adequada para avaliação por computadores.',
+
+                link : 
+                [ 
+                    'https://drive.google.com/file/d/1Dh0gasBX9wVz5UQtmjUPfcV4lXGe5dQj/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/1IejQtuiFTzK-gY7My2MijMd7M7lshE2S/view?usp=drive_link'
+                ],
 
                 recursao: [
                     {
@@ -191,6 +212,13 @@ export default {
 
                 objetivo : 'Converter uma expressão matemática infixa em notação pós-fixa, considerando a precedência dos operadores e usando uma pilha para garantir a ordem correta. Isso pode ser útil em aplicações que precisam avaliar ou processar expressões matemáticas de forma eficiente, como calculadoras ou interpretadores de linguagem.',
 
+                link : 
+                [
+                    'https://drive.google.com/file/d/15gOagVvwqKCVFBjC5cODoIKc66AVhNur/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/1MRhTHVCgEb1A3KvN5s9jqhvhXIbC43AQ/view?usp=drive_link'
+                ],
+
                 recursao: [
                     {
                         name : 'Inicialização de Elementos e Variáveis:',
@@ -248,6 +276,11 @@ export default {
 
                 objetivo : 'O objetivo principal do código é calcular e exibir o valor da permutação P(n, r) de acordo com os valores de n e r fornecidos pelo usuário. A lógica central do código está na função calcularPermutacao. Ela utiliza um loop para calcular o resultado da permutação usando a fórmula matemática apropriada, levando em consideração as restrições de n e r. O código também contém verificações para garantir que os valores fornecidos pelo usuário sejam válidos, incluindo se são inteiros positivos e se foram fornecidos corretamente.',
 
+                link : 
+                [
+                    'https://drive.google.com/file/d/1KEFvOg0VILlLblH-C4AGx_28dnosU3LI/view?usp=drive_link'
+                ],
+
                 recursao: [
                     {
                         name : 'Obtenção da entrada do usuário:',
@@ -279,6 +312,13 @@ export default {
             relatorio : {
 
                 objetivo : 'Calcular e exibir o valor da combinação C(n, p) com base nos valores de n e p fornecidos pelo usuário. A lógica central do código está na função calcularCombinacao. Ela calcula a combinação C(n, p) usando a fórmula matemática correta, que envolve o cálculo dos fatoriais de n, p e (n - p). O código também contém verificações para garantir que os valores fornecidos pelo usuário sejam válidos, incluindo se são inteiros positivos e se n é maior ou igual a p.',
+
+                link : 
+                [
+                    'https://drive.google.com/file/d/18yoVbh4HcrfK7gNBvXycgrvIivQeHou5/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/1A_kYzQ-8z2GSIvw3WpcA64w8DPGgLyYz/view?usp=drive_link'
+                ],
 
                 recursao: [
                     {
@@ -319,6 +359,13 @@ export default {
 
                 objetivo : 'O objetivo principal do código é calcular e exibir todas as combinações C(n, r) para um valor inteiro positivo n fornecido pelo usuário, variando o valor de r de 0 até n. A combinação C(n, r) representa o número de maneiras diferentes de escolher r elementos de um conjunto de n elementos, onde a ordem não importa.',
 
+                link : 
+                [
+                    'https://drive.google.com/file/d/1RpAE60znmzubwmGaUzR8hbCnOqVA8dVJ/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/1BNFdmS-sKjhp4guLHQUd9eDPdsRZBVqP/view?usp=drive_link'
+                ],
+
                 recursao: [
                     {
                         name : 'Obtenção do elemento HTML de entrada:',
@@ -350,6 +397,13 @@ export default {
             relatorio : {
 
                 objetivo : 'O objetivo do código é calcular e exibir o resultado da expansão de (a + b)^n, onde a, b, e n são valores numéricos fornecidos pelo usuário. A lógica principal do código está na expansão do binômio (a + b)^n usando o Teorema Binomial. O coeficiente binomial C(n, r) é calculado para cada valor de r, e os termos (a^(n-r)) e (b^r) são multiplicados com o coeficiente binomial correspondente. Esses termos são somados para obter o resultado final da expansão.',
+
+                link : 
+                [
+                    'https://drive.google.com/file/d/17BRYWGS2CctQmMESSQJiknT3FO5MVDGp/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/1zTT2NdLKYbXWvD1nlcql1twi1kOq7CTn/view?usp=drive_link'
+                ],
 
                 recursao: [
                     {
@@ -387,6 +441,13 @@ export default {
             relatorio : {
 
                 objetivo : 'O objetivo do código é calcular a expansão de (a + b)^n de duas maneiras diferentes e verificar se os resultados das duas abordagens.',
+
+                link : 
+                [
+                    'https://drive.google.com/file/d/1stRJW1NuU3wuRKMZCe4HaBwMkfkU_k4J/view?usp=drive_link',
+
+                    'https://drive.google.com/file/d/1-jwkNF0Ih2eyr58JSM_lkp30gJWSeId5/view?usp=drive_link'
+                ],
 
                 recursao: [
                     {
