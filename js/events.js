@@ -1,6 +1,6 @@
 // EVENTOS PARA INTERAÇÃO DA PÁGINA
 import Dados from "./dados-obj.js";
-import { ShowModal, addArray, addBotton, escolha, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7 } from "./functions.js"
+import { ShowModal, addBotton } from "./functions.js"
 
 // PASSO 1: MONTAR A ESTRUTURA HTML
 const kaya = () => {
@@ -25,7 +25,7 @@ const kaya = () => {
         let entrada = document.createElement("input")
         entrada.setAttribute("type","text")
         entrada.setAttribute("id",`questao-${i}`)
-        entrada.setAttribute("placeholder","ex: 0")
+        entrada.setAttribute("placeholder",`${dados[i].place}`)
         entrada.setAttribute("class","input")
 
         // BOTTON
