@@ -16,21 +16,21 @@ const subconjunto = (conjunto) => {
 }
 
 const quiz1 = (id) => {
-    const input = document.getElementById(`questao-${id}`);
+    const input = document.getElementById(`questao-${id}`)
     const entrada = input.value;
-    const saida = document.getElementById(`resposta-${id}`);
+    const saida = document.getElementById(`resposta-${id}`)
 
     if (entrada.trim() === '') 
     {
-        saida.textContent = 'Nenhum valor inserido.';
+        saida.textContent = 'Nenhum valor inserido.'
         return
     }
 
-    const conjunto = entrada.split(',');
-    const subconjuntos = subconjunto(conjunto);
+    const conjunto = entrada.split(',')
+    const subconjuntos = subconjunto(conjunto)
 
     // Exibir subconjuntos 
-    saida.innerHTML = subconjuntos.map(subset => `[${subset.map(item => item === '' ? '..' : item).join(', ')}]`).join('&nbsp;');
+    saida.innerHTML = subconjuntos.map(subset => `[${subset.map(item => item === '' ? '..' : item).join(', ')}]`).join('&nbsp;')
 }
       
 // QUESTÃO 2
@@ -129,9 +129,9 @@ const quiz2 = (id,sub) => {
     
 // QUESTÃO 3 - ALTERNATIVA A
 const quiz3A = (id) => {
-    const input = document.getElementById(`questao-${id}`);
+    const input = document.getElementById(`questao-${id}`)
     const expressao = input.value;
-    const saida = document.getElementById(`resposta-${id}`);
+    const saida = document.getElementById(`resposta-${id}`)
 
     // Função para verificar a precedência dos operadores
     const precedencia = (operador) => {
@@ -150,8 +150,8 @@ const quiz3A = (id) => {
     }
 
     // Inicialize uma pilha para operadores 
-    const operadores = [];
-    let posfixa = '';
+    const operadores = []
+    let posfixa = ''
     
     // Itere pelos caracteres da expressão
     for (let i = 0; i < expressao.length; i++) 
@@ -160,24 +160,24 @@ const quiz3A = (id) => {
 
         if (caractere === ' ') 
         {
-            continue;
+            continue
         }
 
         if (/[a-zA-Z0-9]/.test(caractere)) 
         {
             // Se for um operando, adicione-o à notação pós-fixa
-            posfixa += (posfixa === '' ? '' : ' ') + caractere;
+            posfixa += (posfixa === '' ? '' : ' ') + caractere
         } 
         else if (caractere === '(') 
         {
             // Se for um parêntese de abertura, empilhe-o
-            operadores.push(caractere);
+            operadores.push(caractere)
         } 
         else if (caractere === ')') 
         {
             
             while (operadores.length > 0 && operadores[operadores.length - 1] !== '(') {
-                posfixa += ' ' + operadores.pop();
+                posfixa += ' ' + operadores.pop()
             }
             operadores.pop(); // Remova o parêntese de abertura
         } 
@@ -185,7 +185,7 @@ const quiz3A = (id) => {
         {
 
             while (operadores.length > 0 && precedencia(operadores[operadores.length - 1]) >= precedencia(caractere)) {
-                posfixa += ' ' + operadores.pop();
+                posfixa += ' ' + operadores.pop()
             }
             operadores.push(caractere); // Empilhe o operador atual
         }
@@ -194,17 +194,17 @@ const quiz3A = (id) => {
     // Desempilhe todos os operadores restantes
     while (operadores.length > 0) 
     {
-        posfixa += ' ' + operadores.pop();
+        posfixa += ' ' + operadores.pop()
     }
 
-    saida.textContent = posfixa.trim(); 
+    saida.textContent = posfixa.trim()
 }
 
 //  QUESTÃO 3 - ALTERNATIVA B 
 const quiz3B = (id) => {
-    const input = document.getElementById(`questao-${id}`);
+    const input = document.getElementById(`questao-${id}`)
     const expressao = input.value;
-    const saida = document.getElementById(`resposta-${id}`);
+    const saida = document.getElementById(`resposta-${id}`)
 
     // Função para verificar a precedência dos operadores
     const precedencia = (operador) => {
@@ -224,16 +224,16 @@ const quiz3B = (id) => {
 
     // Função para converter a expressão infixa em pós-fixa
     const converter = (infixa) => {
-        const operadores = [];
-        let posfixa = '';
+        const operadores = []
+        let posfixa = ''
 
         for (let i = 0; i < infixa.length; i++) 
         {
-            const caractere = infixa[i];
+            const caractere = infixa[i]
 
             if (caractere === ' ') 
             {
-                continue;
+                continue
             }
 
             if (/[a-zA-Z0-9]/.test(caractere)) 
@@ -241,42 +241,42 @@ const quiz3B = (id) => {
                 // Adicione um espaço entre os operandos
                 if (posfixa !== '' && /[a-zA-Z0-9]/.test(posfixa[posfixa.length - 1])) 
                 {
-                    posfixa += ' ';
+                    posfixa += ' '
                 }
-                posfixa += caractere;
+                posfixa += caractere
             } 
             else if (caractere === '(') 
             {
-                operadores.push(caractere);
+                operadores.push(caractere)
             } 
             else if (caractere === ')') 
             {
                 while (operadores.length > 0 && operadores[operadores.length - 1] !== '(') 
                 {
-                    posfixa += ' ' + operadores.pop();
+                    posfixa += ' ' + operadores.pop()
                 }
-                operadores.pop();
+                operadores.pop()
             } 
             else 
             {
                 while (operadores.length > 0 && precedencia(operadores[operadores.length - 1]) >= precedencia(caractere)) 
                 {
-                    posfixa += ' ' + operadores.pop();
+                    posfixa += ' ' + operadores.pop()
                 }
-                operadores.push(caractere);
+                operadores.push(caractere)
             }
         }
 
         while (operadores.length > 0) 
         {
-            posfixa += ' ' + operadores.pop();
+            posfixa += ' ' + operadores.pop()
         }
 
-        return posfixa.trim();
+        return posfixa.trim()
     }
 
-    const posfixa = converter(expressao);
-    saida.textContent = posfixa;
+    const posfixa = converter(expressao)
+    saida.textContent = posfixa
 }
 
 // QUESTÃO 4
@@ -380,57 +380,57 @@ const quiz5 = (id) => {
 
 // QUESTÃO 6
 const quiz6 = (id) => {
-    const input = document.getElementById(`questao-${id}`);
+    const input = document.getElementById(`questao-${id}`)
     const n = parseInt(input.value);
-    const saida = document.getElementById(`resposta-${id}`);
+    const saida = document.getElementById(`resposta-${id}`)
 
     // Função para calcular C(n, r)
     const calcularCombinacao = (n, r) => {
         // Verificar se n e r são números inteiros positivos
         if (n < 0 || r < 0 || !Number.isInteger(n) || !Number.isInteger(r)) {
-            return 'Números inválidos. Insira valores inteiros positivos.';
+            return 'Números inválidos. Insira valores inteiros positivos.'
         }
 
         // Função para calcular o fatorial
         const calcularFatorial = (x) => {
             if (x === 0 || x === 1) {
-                return 1;
+                return 1
             }
-            let resultado = 1;
+            let resultado = 1
             for (let i = 2; i <= x; i++) {
-                resultado *= i;
+                resultado *= i
             }
-            return resultado;
+            return resultado
         }
 
         // Calcular C(n, r)
         if (n >= r) 
         {
-            const numerador = calcularFatorial(n);
-            const denominador = calcularFatorial(r) * calcularFatorial(n - r);
-            return numerador / denominador;
+            const numerador = calcularFatorial(n)
+            const denominador = calcularFatorial(r) * calcularFatorial(n - r)
+            return numerador / denominador
         } 
         else 
         {
-            return 'n deve ser maior ou igual a r.';
+            return 'n deve ser maior ou igual a r.'
         }
     }
 
     if (!isNaN(n) && n >= 0 && Number.isInteger(n)) 
     {
-        let resultados = '';
+        let resultados = ''
 
         for (let r = 0; r <= n; r++) 
         {
-            const resultadoCombinacao = calcularCombinacao(n, r);
-            resultados += `C(${n}, ${r}) = ${resultadoCombinacao}\n .. `;
+            const resultadoCombinacao = calcularCombinacao(n, r)
+            resultados += `C(${n}, ${r}) = ${resultadoCombinacao}\n .. `
         }
 
-        saida.textContent = resultados;
-    } 
+        saida.textContent = resultados
+    }
     else 
     {
-        saida.textContent = 'Valor inválido. Insira um número inteiro positivo.';
+        saida.textContent = 'Valor inválido. Insira um número inteiro positivo.'
     }
 }
 
