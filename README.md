@@ -1,6 +1,7 @@
-# TDE-1-MATH
+# tde de matemática 
  script simples para um trabalho da faculdade
 
+Funcionamento: 
 
 Dentro da função Kaia, existe uma função chamada AddBotton, ela aplica uma esculta para o evento de click em todos os botões de calcular da tela.
 
